@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSentry - In Development</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #020d1c 0%, #001f3f 100%);
+            color: #E0F7FA;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Custom styles for the luxury theme and animations */
+        .glass-card {
+            background-color: rgba(0, 48, 87, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(135, 206, 235, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 200, 255, 0.3);
+        }
+
+        .status-badge {
+            animation: pulse-bg 2s infinite;
+        }
+
+        @keyframes pulse-bg {
+            0% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 188, 212, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 188, 212, 0); }
+        }
+
+        .team-card {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInScale 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Delay for staggered team card animation */
+        .team-card:nth-child(1) { animation-delay: 0.1s; }
+        .team-card:nth-child(2) { animation-delay: 0.2s; }
+        .team-card:nth-child(3) { animation-delay: 0.3s; }
+        .team-card:nth-child(4) { animation-delay: 0.4s; }
+        .team-card:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+
+    <main class="w-full max-w-5xl p-6 sm:p-10 lg:p-16">
+
+        <!-- Header and Status -->
+        <header class="text-center mb-12 animate-in slide-in-from-top duration-500">
+            <img src="20251031_104901.jpg" onerror="this.onerror=null; this.src='https://placehold.co/150x150/003f6b/87cefa?text=AquaSentry+Logo';" 
+                 alt="AquaSentry Project Logo" class="mx-auto h-36 w-36 mb-4 rounded-full border-4 border-cyan-400/50 object-cover">
+            
+            <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-cyan-500 pb-2">
+                AquaSentry Project
+            </h1>
+            
+            <div class="mt-4 flex justify-center">
+                <span class="status-badge inline-flex items-center rounded-full bg-cyan-800 px-4 py-2 text-xl font-medium text-cyan-200 border border-cyan-400">
+                    🔬 In Active Development
+                </span>
+            </div>
+            <p class="mt-3 text-lg font-light text-blue-300">
+                The future of local water safety monitoring is being built.
+            </p>
+        </header>
+
+        <!-- Team Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-teal-300">
+                Meet the Development Team (8th D)
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                <!-- Member 1: Leader -->
+                <div class="glass-card team-card p-4 rounded-xl text-center">
+                    <div class="h-16 w-16 mx-auto rounded-full bg-cyan-700 mb-2 flex items-center justify-center text-3xl font-black border-2 border-cyan-300">A</div>
+                    <p class="font-bold text-xl text-teal-200">Anshul</p>
+                    <p class="text-sm font-semibold text-cyan-400 mt-0.5">Project Leader</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="glass-card team-card p-4 rounded-xl text-center">
+                    <div class="h-16 w-16 mx-auto rounded-full bg-blue-700 mb-2 flex items-center justify-center text-3xl font-black border-2 border-blue-300">AP</div>
+                    <p class="font-bold text-xl text-teal-200">Anandhu P.S.</p>
+                    <p class="text-sm text-blue-300 mt-0.5">Developer</p>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="glass-card team-card p-4 rounded-xl text-center">
+                    <div class="h-16 w-16 mx-auto rounded-full bg-blue-700 mb-2 flex items-center justify-center text-3xl font-black border-2 border-blue-300">MA</div>
+                    <p class="font-bold text-xl text-teal-200">Mohmmad Arman</p>
+                    <p class="text-sm text-blue-300 mt-0.5">Developer</p>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="glass-card team-card p-4 rounded-xl text-center">
+                    <div class="h-16 w-16 mx-auto rounded-full bg-blue-700 mb-2 flex items-center justify-center text-3xl font-black border-2 border-blue-300">AA</div>
+                    <p class="font-bold text-xl text-teal-200">Affan Ahemad</p>
+                    <p class="text-sm text-blue-300 mt-0.5">Developer</p>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="glass-card team-card p-4 rounded-xl text-center">
+                    <div class="h-16 w-16 mx-auto rounded-full bg-blue-700 mb-2 flex items-center justify-center text-3xl font-black border-2 border-blue-300">YK</div>
+                    <p class="font-bold text-xl text-teal-200">Yash Kumar</p>
+                    <p class="text-sm text-blue-300 mt-0.5">Developer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Institutional Context -->
+        <section class="mt-12 text-center glass-card p-8 rounded-2xl animate-in slide-in-from-bottom duration-500">
+            <h2 class="text-2xl font-bold mb-4 text-cyan-300">Institutional Context</h2>
+            <div class="space-y-2 text-blue-200">
+                <p class="text-lg">
+                    <strong class="text-teal-400">School:</strong> P.M.S.H.R.I K.V. N.F.C Vigyan Vihar Delhi- 110092
+                </p>
+                <p class="text-lg font-medium">
+                    <strong class="text-teal-400">Program:</strong> Viskit Bharat Abhyan Buildathon
+                </p>
+            </div>
+            <p class="mt-6 italic text-sm text-blue-400">
+                We are proud to contribute to the vision of a Developed India through innovation in public health technology.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-blue-400 text-xs mt-10 w-full">
+        AquaSentry | &copy; Team 8th D
+    </footer>
+</body>
+  </html>
+  
